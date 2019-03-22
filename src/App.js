@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
 import List from './grocery/List';
-import Item from './grocery/Item';
+
 
 class App extends Component {
+  state = {
+    list: [ 
+      {id: 1, name: 'apple', price: 1.00},
+      {id: 2, name: 'toothpaste', price: 3.00},
+      {id: 3, name: 'candy', price: 5.00},
+    ]
+  }
+
   render() {
+    const { list } = this.state
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        {/* <h1>Grocery List</h1> */}
+        <List name="Grocery List" items={list} />
       </div>
     );
   }
