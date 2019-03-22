@@ -11,15 +11,21 @@ class App extends Component {
     ]
   }
 
-  addItem = (incomingListItem) =>{
+  addItem = (incomingListItem) => {
+    const { list } = this.state
+    const item = { id: this.getUniqID(), ...incomingListItem } 
+    this.setState({ list: [item, ...list]})
+  }
 
+  getUniqID = () => {
+    return Math.floor((1+ Math.random()) * 0x10000).toString(16).substring(1)
   }
 
   render() {
     const { list, addItem } = this.state
     return (
       <div>
-        <AddForm addItem={addItem} />
+        <AddForm addItem={this.addItem} />
         <List name="Grocery List" items={list} />
       </div>
     );

@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ListItem = ({id, name, price}) =>(
+const ListItem = ({id, itemName, price}) =>(
   <li>
-    {name} : ${price}
+    {itemName} : ${price}
   </li>
 )
 

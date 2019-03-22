@@ -5,7 +5,7 @@ class AddForm extends React.Component {
     
     handleSubmit = (e) =>{
       e.preventDefault()
-      this.props.addItem(this.state.name)
+      this.props.addItem(this.state)
       this.setState( {itemName: '', price: 0.00 })
     }
 
