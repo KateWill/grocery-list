@@ -1,0 +1,26 @@
+.input,
+.button {
+  width: 300px;
+}
+.container {
+  margin: 3rem;
+}
+.input,
+.button {
+  margin: 5px !important;
+}
+
+form{
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+button.ui.red.button {
+  width: 100px;
+}
+li{
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}

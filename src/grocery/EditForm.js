@@ -1,30 +1,30 @@
 import React from 'react'
 import { Container, Button, Icon, Input, Label  } from 'semantic-ui-react';
-import '.././AddForm.css'; 
+// import '.././editForm.css';
 
-class AddForm extends React.Component {
-    state = { itemName: '', price: 0.00, }
-    // state = { itemName: '', price: 0.00, complete: !false }
+class EditForm extends React.Component {
+  state = {itemName: '', price: 0.00, }
+    
+    // edit(){
+    //   this.setState({ value:} )
+    // }
     handleSubmit = (e) =>{
       e.preventDefault()
-      this.props.addItem(this.state)
-      // this.props.addItem({itemName: this.state.itemName, price:this.state.price, complete: !this.state.complete})
-      this.setState( {itemName: '', price: 0.00,  })
-      // this.setState( {itemName: '', price: 0.00, complete: !false, })
-    }
+      this.props.editItem(this.state.id, this.state)
+      this.setState( {itemName: '', price: 0.00,  }) 
+    };
 
     handleChange = (e) =>{
       const {name, value} = e.target
       this.setState({ [name]: value})
-      // this.setState({ [name]: value, complete: !this.state.complete})
-    }
+    };
 
     render(){
       const { itemName, price, complete } = this.state
       return(
         <Container>
           <Label as='a' color='blue' ribbon>
-            Add List Item
+            Edit List Item
           </Label>
         <form onSubmit={this.handleSubmit}>
         <Input size='large'>
@@ -57,11 +57,11 @@ class AddForm extends React.Component {
             onChange={this.handleChange}
           />
         </Input> */}
-        <Button color="green">Add to list <Icon name="add circle"/></Button>
+        <Button color="green">Edit Item <Icon name="add circle"/></Button>
       </form>
       </Container>
       )
     }
 }
 
-export default AddForm
+export default EditForm
